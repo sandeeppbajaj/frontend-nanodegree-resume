@@ -4,13 +4,13 @@ var bio = {
   name: 'Sandeep Bajaj',
   role: 'Full-Stack Developer',
   contacts: {
-    mobile: '408-780-8231',
+    mobile: '408-123-4567',
     email: 'sandeepbajaj0507@gmail.com',
     github: 'sandeeppbajaj',
     location: 'San Jose'
   } ,
   biopic:'images/fry.jpg',
-  welcomeMessage:'Welcome to my resume',
+  welcomeMessage:'Welcome to my sample resume',
   skills: skills
 };
 var education = {
