@@ -108,7 +108,7 @@ var projects = {
 };
 
 
-function displayWork(){
+work.display = function(){
   for(var job in work.jobs){
     $('#workExperience').append(HTMLworkStart);
 
@@ -127,10 +127,6 @@ function displayWork(){
       ('%data%',work.jobs[job].description);
       $('.work-entry:last').append(formattedDescription);
   }
-
-
-  //$('#main').append(bio.name);
-  //$('#main').append(bio.role);
 }
 
 projects.display = function(){
@@ -201,7 +197,8 @@ bio.display = function(){
     }
   }
 };
+
 bio.display();
-displayWork();
+work.display();
 projects.display();
 $('#mapDiv').append(googleMap);
