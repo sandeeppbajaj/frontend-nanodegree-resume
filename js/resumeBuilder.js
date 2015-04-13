@@ -4,10 +4,10 @@ var bio = {
   name: 'Sandeep Bajaj',
   role: 'Full-Stack Developer',
   contacts: {
-    mobile: '408-123-4567',
-    email: 'sandeepbajaj0507@gmail.com',
+    mobile: '408-784-6174',
+    email: 'sandeepp.bajaj@gmail.com',
     github: 'sandeeppbajaj',
-    location: 'San Jose'
+    location: 'San Jose, CA'
   } ,
   biopic:'images/fry.jpg',
   welcomeMessage:'Welcome to my sample resume',
@@ -107,23 +107,6 @@ var projects = {
   ]
 };
 
-function displayNameAndRole(){
-  //$('#main').append('Sandeep Bajaj');
-  var formattedName = HTMLheaderName.replace('%data%','Sandeep Bajaj');
-  var formattedRole = HTMLheaderRole.replace('%data%','Full-stack Developer');
-  $('#header').prepend(formattedRole);
-  $('#header').prepend(formattedName);
-}
-
-function displaySkills(){
-  if(bio.skills.length > 0){
-    $('#header').append(HTMLskillsStart);
-    for(var i in bio.skills){
-      var formattedSkils = HTMLskills.replace('%data%',bio.skills[i]);
-      $('#skills').append(formattedSkils);
-    }
-  }
-}
 
 function displayWork(){
   for(var job in work.jobs){
@@ -186,11 +169,39 @@ function inName(oldName){
   return finalName;
 }
 
-var formattedBioPic = HTMLbioPic.replace('%data%',bio.biopic);
-$('#header').append(formattedBioPic);
-//$('#main').append(internationalizeButton);
+bio.display = function(){
+  //Display Name & Role
+  var formattedName = HTMLheaderName.replace('%data%','Sandeep Bajaj');
+  var formattedRole = HTMLheaderRole.replace('%data%','Full-stack Developer');
+  $('#header').prepend(formattedRole);
+  $('#header').prepend(formattedName);
+
+  //Display Contacts
+  for(var contact in bio.contacts){
+    var formattedContactItem = HTMLcontactGeneric.replace('%data%',bio.contacts[contact])
+                                                 .replace('%contact%',contact);
+    $('#topContacts').append(formattedContactItem);
+    $('#footerContacts').append(formattedContactItem);
+  }
+
+  //Display Bio Pic
+  var formattedBioPic = HTMLbioPic.replace('%data%',bio.biopic);
+  $('#header').append(formattedBioPic);
+
+  //Display Welcome Message
+  var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%',bio.welcomeMessage);
+  $('#header').append(formattedWelcomeMessage);
+
+  //Display Skills
+  if(bio.skills.length > 0){
+    $('#header').append(HTMLskillsStart);
+    for(var i in bio.skills){
+      var formattedSkils = HTMLskills.replace('%data%',bio.skills[i]);
+      $('#skills').append(formattedSkils);
+    }
+  }
+};
+bio.display();
 displayWork();
-displayNameAndRole();
-displaySkills();
 projects.display();
 $('#mapDiv').append(googleMap);
