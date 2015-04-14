@@ -62,6 +62,19 @@ var education = {
 var work = {
   jobs:[
     {
+      employer:'GE Software',
+      title:'Software Consultant',
+      dates:'Sep, 2013 - future',
+      description:'Who moved my cheese chessy feet cauliflower '+
+        'cheese. Queso taleggio when the cheese comes out '+
+        'everybody\'s happy airedale ricotta cheese and wine '+
+        'paneer camembert de normandie. Swiss mozzarella cheese '+
+        'slices feta fromage frais airedale swiss cheesecake. Hard '+
+        'cheese blue castello halloumi parmesan say cheese skinking '+
+        'bishop jarlsberg.',
+      location: 'San Ramon, CA'
+    },
+    {
       employer:'PressFit Pipe & Profile',
       title:'Senior Software Engineer',
       dates:'Mar, 2011 - Feb, 2013',
@@ -73,7 +86,8 @@ var work = {
         'cheese blue castello halloumi parmesan say cheese skinking '+
         'bishop jarlsberg.',
       location: 'Bhiwandhi, Maharashtra, India'
-    },{
+    },
+    {
       employer:'Larsen & Toubro',
       title:'Senior Software Engineer',
       dates:'July, 2010 - Feb, 2011',
@@ -128,14 +142,15 @@ work.display = function(){
 
     var formattedEmployer =  HTMLworkEmployer.replace
       ('%data%',work.jobs[job].employer);
-    var formattedTitle = HTMLworkTitle.replace
-      ('%data%',work.jobs[job].title);
+    var formattedTitle = HTMLworkTitle.replace('%data%',work.jobs[job].title);
     var formattedEmployerTitle = formattedEmployer + formattedTitle;
     $('.work-entry:last').append(formattedEmployerTitle);
 
-    var formattedDates = HTMLworkDates.replace
-      ('%data%',work.jobs[job].dates)
+    var formattedDates = HTMLworkDates.replace('%data%',work.jobs[job].dates);
     $('.work-entry:last').append(formattedDates);
+
+    var formattedLocation = HTMLworkLocation.replace('%data%',work.jobs[job].location);
+    $('.work-entry:last').append(formattedLocation);
 
     var formattedDescription = HTMLworkDescription.replace
       ('%data%',work.jobs[job].description);
