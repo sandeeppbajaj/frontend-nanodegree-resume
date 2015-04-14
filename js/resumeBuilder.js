@@ -29,10 +29,10 @@ var education = {
       degree: 'High School',
       majors: ['Science'],
       dates: 2004,
-      url: 'http://www.chm.edu/index.htm'
+      url: 'http://www.chm.edu'
     }
   ],
-  onlineCourses:[
+  'onlineCourses':[
     {
       title:'Front-End Web Developer Nanodegree',
       school:'Udacity',
@@ -150,11 +150,9 @@ projects.display = function(){
   }
 };
 
-
 $(document).click(function(loc){
     logClicks(loc.pageX,loc.pageY);
 });
-
 
 function inName(oldName){
   oldName = oldName || $('#name').html();
@@ -198,7 +196,51 @@ bio.display = function(){
   }
 };
 
+education.display = function(){
+    //Display Schools
+    for(var school in this.schools){
+      $('#education').append(HTMLschoolStart);
+
+      var formattedSchoolName = HTMLschoolName.replace('%data%',this.schools[school].name);
+      var formattedSchoolDegree = HTMLschoolDegree.replace('%data%',this.schools[school].degree);
+      var schoolNameDegree = formattedSchoolName + formattedSchoolDegree;
+      $('.education-entry:last').append(schoolNameDegree);
+      $('.education-entry:last').find('a').attr('href',this.schools[school].url);
+
+      var formattedDates = HTMLschoolDates.replace('%data%',this.schools[school].dates);
+      $('.education-entry:last').append(formattedDates);
+
+      var formattedLocation = HTMLschoolLocation.replace('%data%',this.schools[school].city);
+      $('.education-entry:last').append(formattedLocation);
+      var majors = this.schools[school].majors;
+      for(var major in majors){
+        var formattedMajor = HTMLschoolMajor.replace('%data%',majors[major]);
+        $('.education-entry:last').append(formattedMajor);
+      }
+    }
+
+    $('#education').append(HTMLonlineClasses);
+
+    //Display Online Courses
+    for(var course in this.onlineCourses){
+      $('#education').append(HTMLschoolStart);
+
+      var formattedTitle = HTMLonlineTitle.replace('%data%',this.onlineCourses[course].title);
+      var formattedOnlineSchool = HTMLonlineSchool.replace('%data%',this.onlineCourses[course].school);
+      $('.education-entry:last').append(formattedTitle + formattedOnlineSchool);
+      $('.education-entry:last').find('a').attr('href',this.onlineCourses[course].url);
+
+      var formattedDates = HTMLonlineDates.replace('%data%',this.onlineCourses[course].dates);
+      $('.education-entry:last').append(formattedDates);
+
+      /*var formattedURL = HTMLonlineURL.replace('%data%',this.onlineCourses[course].url);
+      $('.education-entry:last').append(formattedURL);
+      $('.education-entry:last').find('a').attr('href',this.onlineCourses[course].url);*/
+    }
+};
+
 bio.display();
 work.display();
 projects.display();
+education.display();
 $('#mapDiv').append(googleMap);
