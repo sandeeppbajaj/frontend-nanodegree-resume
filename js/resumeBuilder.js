@@ -17,7 +17,7 @@ var education = {
   'schools':[
     {
       name: 'Konkan Gyanpeeth College of Engineering',
-      city: 'Karjat',
+      location: 'Karjat, Maharashtra, India',
       degree: 'Bachelors',
       majors: ['Computer Science'],
       dates: 2008,
@@ -25,7 +25,7 @@ var education = {
     },
     {
       name: 'Smt. Chandibai Himathmal Mansukhani College',
-      city: 'Ulhasnagar',
+      location: 'Ulhasnagar, Maharashtra, India',
       degree: 'High School',
       majors: ['Science'],
       dates: 2004,
@@ -210,7 +210,7 @@ education.display = function(){
       var formattedDates = HTMLschoolDates.replace('%data%',this.schools[school].dates);
       $('.education-entry:last').append(formattedDates);
 
-      var formattedLocation = HTMLschoolLocation.replace('%data%',this.schools[school].city);
+      var formattedLocation = HTMLschoolLocation.replace('%data%',this.schools[school].location);
       $('.education-entry:last').append(formattedLocation);
       var majors = this.schools[school].majors;
       for(var major in majors){
@@ -247,4 +247,4 @@ $('#mapDiv').append(googleMap);
 
 $(document).click(function(loc){
   logClicks(loc.pageX,loc.pageY);
-});
+ });
