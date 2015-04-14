@@ -62,28 +62,42 @@ var education = {
 var work = {
   jobs:[
     {
-      employer:'Planet Express',
-      title:'Delivery Boy',
-      dates:'January 3000 - Future',
+      employer:'PressFit Pipe & Profile',
+      title:'Senior Software Engineer',
+      dates:'Mar, 2011 - Feb, 2013',
       description:'Who moved my cheese chessy feet cauliflower '+
         'cheese. Queso taleggio when the cheese comes out '+
         'everybody\'s happy airedale ricotta cheese and wine '+
         'paneer camembert de normandie. Swiss mozzarella cheese '+
         'slices feta fromage frais airedale swiss cheesecake. Hard '+
         'cheese blue castello halloumi parmesan say cheese skinking '+
-        'bishop jarlsberg.'
+        'bishop jarlsberg.',
+      location: 'Bhiwandhi, Maharashtra, India'
+    },{
+      employer:'Larsen & Toubro',
+      title:'Senior Software Engineer',
+      dates:'July, 2010 - Feb, 2011',
+      description:'Who moved my cheese chessy feet cauliflower '+
+        'cheese. Queso taleggio when the cheese comes out '+
+        'everybody\'s happy airedale ricotta cheese and wine '+
+        'paneer camembert de normandie. Swiss mozzarella cheese '+
+        'slices feta fromage frais airedale swiss cheesecake. Hard '+
+        'cheese blue castello halloumi parmesan say cheese skinking '+
+        'bishop jarlsberg.',
+      location: 'Mumbai, Maharashtra, India'
     },
     {
-      employer:'Panucci\'s Pizza',
-      title:'Delivery Boy',
-      dates:'1998 - December 31, 1999',
+      employer:'Larsen & Toubro',
+      title:'Software Engineer',
+      dates:'July, 2008 - June, 2010',
       description:'Who moved my cheese chessy feet cauliflower '+
         'cheese. Queso taleggio when the cheese comes out '+
         'everybody\'s happy airedale ricotta cheese and wine '+
         'paneer camembert de normandie. Swiss mozzarella cheese '+
         'slices feta fromage frais airedale swiss cheesecake. Hard '+
         'cheese blue castello halloumi parmesan say cheese skinking '+
-        'bishop jarlsberg.'
+        'bishop jarlsberg.',
+      location: 'Bangalore, Karnataka, India'
     }
   ]
 };
